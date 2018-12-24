@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/about', function () {
+    return "Hello this is my first laravel app";
+});
+Route::get('/data/{id}/{name}', function ($id,$name) {
+    return "sending date by route " . $id ." " . $name;
+});
+Route::resource('post','PostController');
+
+Route::get('/contact/{id}', 'PostController@contact');
+Route::get('/post/{id}', 'PostController@show_post');
+
+
+  
